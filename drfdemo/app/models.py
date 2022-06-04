@@ -1,7 +1,6 @@
 from django.db import models
 
 class Bar(models.Model):
-    id = models.IntegerField(primary_key=True)
     unique_code = models.CharField(max_length=10, unique=True)
 
 class Foo(models.Model):
