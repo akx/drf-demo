@@ -8,7 +8,7 @@ class FooSerializer(serializers.ModelSerializer):
         fields = ['bar_code']
 
 class FooViewSet(viewsets.ModelViewSet):
-    queryset = Foo.objects.all()
+    queryset = Foo.objects.all().select_related("bar_code")
     serializer_class = FooSerializer
 
 def make_foo(request):
