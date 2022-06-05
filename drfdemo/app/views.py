@@ -3,6 +3,8 @@ from rest_framework import serializers, viewsets
 from django.http import HttpResponse
 
 class FooSerializer(serializers.ModelSerializer):
+    bar_code = serializers.CharField(source='bar_code_id')
+
     class Meta:
         model = Foo
         fields = ['bar_code']
